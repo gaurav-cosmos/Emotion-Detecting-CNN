@@ -64,18 +64,3 @@ model.fit_generator(training_set,
                          
 model.save('better.h5')            
 
-
-import cv2
-import numpy as np
-
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
-
-
-img  = load_img('Data_Set/Train/Sad/images12.jpeg',target_size = (32,32))
-
-img = img_to_array(img)
-img = img.reshape((1, img.shape[0], img.shape[1], img.shape[2]))
-
-
-g = model.predict(img)
